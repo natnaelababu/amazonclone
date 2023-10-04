@@ -1,7 +1,7 @@
 import React from "react";
 import "../Header/Header.css";
-import SearchIcon from "@material-ui/icons/Search";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../Stateprovider";
 import { auth } from "../Authentication/Firebase";
@@ -51,7 +51,7 @@ function Header() {
 			</div>
 			<Link to="/checkout">
 				<div className="header__optionBasket">
-					<ShoppingBasketIcon />
+					<ShoppingCartIcon />
 					<span className="header__optionLineTwo header__basketCount">
 						{basket.length}
 					</span>

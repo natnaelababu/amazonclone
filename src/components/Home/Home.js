@@ -1,15 +1,56 @@
 import React from "react";
 import "../Home/Home.css";
 import Product from "../Products/Product";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+const items = [
+	<img
+		className="home__image"
+		src="https://m.media-amazon.com/images/I/61lwJy4B8PL._SX3000_.jpg"
+		alt="banner"
+	/>,
+	<img
+		className="home__image"
+		src="https://m.media-amazon.com/images/I/71Ie3JXGfVL._SX3000_.jpg"
+		alt="banner"
+	/>,
+	<img
+		className="home__image "
+		src="https://m.media-amazon.com/images/I/71U-Q+N7PXL._SX3000_.jpg"
+		alt="banner"
+	/>,
+	<img
+		className="home__image "
+		src="https://m.media-amazon.com/images/I/81KkrQWEHIL._SX3000_.jpg"
+		alt="banner"
+	/>,
+	<img
+		className="home__image "
+		src="https://m.media-amazon.com/images/I/61zAjw4bqPL._SX3000_.jpg"
+		alt="banner"
+	/>,
+];
 
 function Home() {
 	return (
 		<div className="home">
 			<div className="home__container">
-				<img
+				{/* <img
 					className="home__image"
 					src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
 					alt=""
+				/> */}
+				<AliceCarousel
+					autoPlay
+					autoPlayStrategy="none"
+					autoPlayInterval={4500}
+					animationDuration={4500}
+					animationType="slideout"
+					infinite
+					touchTracking={false}
+					disableDotsControls
+					disableButtonsControls
+					items={items}
 				/>
 				<div className="home__row">
 					<Product
