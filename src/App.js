@@ -7,7 +7,15 @@ import Login from "./components/Authentication/Login";
 import { auth } from "../src/components/Authentication/Firebase";
 import { useStateValue } from "./Stateprovider";
 import{ useEffect } from "react";
+import Payment from "./components/Payment/Payment";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./components/Orders/Orders";
+import Footer from "./components/Footer/Footer";
 
+const promise = loadStripe(
+	'pk_test_51NxVTUDzp21QueknKeUbt8xWgJ6q8BxpxxPNVkHf0Zs8Hd1lEujFu9GdljxckoFirOx2KGpEcOibyH6y4TskRiV3001VQPq8hA'
+);
 function App() {
 	const [{}, dispatch] = useStateValue();
 	useEffect(() => {
@@ -40,14 +48,43 @@ function App() {
 							<>
 								<Header />
 								<Home />
+								<Footer />
 							</>
 						}
 					/>
+					<Route
+						path="/payment"
+						element={
+							<>
+								<Header />
+								<Elements stripe={promise}>
+									<Payment />
+								</Elements>
+							</>
+						}
+					/>
+
 					<Route
 						path="/checkout"
 						element={
 							<>
 								<Header /> <Checkout />
+								<Footer />
+							</>
+						}
+					/>
+					<Route
+						path="/Orders"
+						element={
+							<>
+								<Header />
+
+								<Orders />
+
+								
+
+								<Footer />
+
 							</>
 						}
 					/>

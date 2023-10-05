@@ -36,20 +36,20 @@ function Header() {
 						</span>
 					</div>
 				</Link>
-			</div>
-			<div className="header__nav">
-				<div className="header__option">
-					<span className="header__optionLineOne">Returns</span>
-					<span className="header__optionLineTwo">& Orders</span>
-				</div>
-			</div>
-			<div className="header__nav">
+
+				<Link to="/Orders" className="headr-clearlink">
+					<div className="header__option">
+						<span className="header__optionLineOne">Returns</span>
+						<span className="header__optionLineTwo">& Orders</span>
+					</div>
+				</Link>
+
 				<div className="header__option">
 					<span className="header__optionLineOne">Your</span>
 					<span className="header__optionLineTwo">Prime</span>
 				</div>
 			</div>
-			<Link to="/checkout">
+			<Link to="/checkout" className="headr-clearlink">
 				<div className="header__optionBasket">
 					<ShoppingCartIcon />
 					<span className="header__optionLineTwo header__basketCount">
