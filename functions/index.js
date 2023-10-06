@@ -1,10 +1,9 @@
-const functions = require("firebase-functions");
-
+// const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 // const { onRequest } = require("firebase-functions/v2/https");
 // const logger = require("firebase-functions/logger");
-require("dotenv").config()
+require("dotenv").config();
 const stripe = require("stripe")(process.env.SECRET_KEY);
 
 const app = express();
@@ -36,9 +35,8 @@ app.post("/payments/create", async (request, response) => {
 	}
 });
 
-app.listen(5000, (err) => {
+app.listen(5500, (err) => {
 	if (!err) {
-		console.log("server running on http://localhost:5000");
+		console.log("server running on http://localhost:5500");
 	}
 });
-
