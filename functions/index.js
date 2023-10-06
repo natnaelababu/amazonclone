@@ -35,8 +35,8 @@ app.post("/payments/create", async (request, response) => {
 	}
 });
 
-app.listen(5500, (err) => {
+app.listen(5000, (err) => {
 	if (!err) {
-		console.log("server running on http://localhost:5500");
+		console.log("server running on http://localhost:5000");
 	}
 });
